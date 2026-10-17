@@ -85,8 +85,8 @@ const PROJECTS = [
     url: BAMBU,
   },
   {
-    name: "What Am I",
-    logo: "",
+    name: "What Am I?",
+    logo: "assets/logos/what-am-i.webp",
     genre: null,
     desc: SOON,
     url: BAMBU,
@@ -113,7 +113,7 @@ const PROJECTS = [
   },
   {
     name: "Wing Party",
-    logo: "",
+    logo: "assets/logos/wing-party.webp",
     genre: { tr: "2D Casual – PC", en: "2D Casual – PC" },
     desc: {
       tr: "Güçlendirmeler ve dinamik zorlukla takım bazlı Flappy Bird tarzı oyun.",
