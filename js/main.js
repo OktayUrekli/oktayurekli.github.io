@@ -51,13 +51,28 @@
     }
   }
 
+  // "Speed/Power" tarzı bölmeli çubuk: her oyun bir bölme (14'ten büyük sayılarda
+  // bir bölme = 2 oyun), sonda gelişim payı için 2 boş bölme.
+  function meter(value, index) {
+    const v = parseInt(value, 10) || 0;
+    const lit = Math.min(v > 14 ? Math.round(v / 2) : v, 20);
+    const bar = el("span", "meter meter--" + (index % 2 ? "pink" : "mint"));
+    bar.setAttribute("aria-hidden", "true");
+    for (let k = 0; k < lit + 2; k++) {
+      const seg = el("i", k < lit ? "is-lit" : null);
+      seg.style.setProperty("--i", k);
+      bar.append(seg);
+    }
+    return bar;
+  }
+
   function renderTimeline(containerId, items) {
     const box = document.getElementById(containerId);
     box.replaceChildren();
     items.forEach((item) => {
       const row = el("div", "entry");
       const head = el("div", "entry__head");
-      head.append(el("h3", "entry__role", t(item.role)), el("span", "entry__date", t(item.date)));
+      head.append(el("h4", "entry__role", t(item.role)), el("span", "entry__date", t(item.date)));
       row.append(head);
 
       const placeName = t(item.place);
@@ -75,9 +90,9 @@
 
       if (item.stats && item.stats.length) {
         const stats = el("div", "stats");
-        item.stats.forEach((s) => {
+        item.stats.forEach((s, j) => {
           const stat = el("div", "stat");
-          stat.append(el("strong", "stat__value", s.value), el("span", "stat__label", t(s.label)));
+          stat.append(el("strong", "stat__value", s.value), el("span", "stat__label", t(s.label)), meter(s.value, j));
           stats.append(stat);
         });
         row.append(stats);
@@ -94,7 +109,7 @@
     document.getElementById("projects-sub").textContent = t(UI_TEXT.projectsCount).replace("{n}", PROJECTS.length);
     const list = document.getElementById("project-list");
     list.replaceChildren();
-    // Kartlar ikişerli satırlara dizilir; satırdaki iki kartı siyah bir çizgi bağlar
+    // Kartlar ikişerli satırlara dizilir (masaüstünde 2 sütun)
     let row = null;
     PROJECTS.forEach((p, i) => {
       if (i % 2 === 0) {
@@ -110,7 +125,7 @@
       if (p.logo) {
         const img = el("img");
         img.src = p.logo;
-        img.alt = p.name;
+        img.alt = "";   // oyun adı zaten kartın başlığında
         img.loading = "lazy";
         img.width = 360;
         img.height = 360;
@@ -121,7 +136,7 @@
       }
 
       const info = el("div", "card__info");
-      // Oyun adları İngilizce: büyük harfe çevrilirken "WİNG" yerine "WING" olsun
+      // Oyun adları İngilizce: dil etiketi doğru olsun
       const name = el("h3", "card__name", p.name);
       name.lang = "en";
       info.append(name);

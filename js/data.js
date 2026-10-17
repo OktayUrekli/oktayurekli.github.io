@@ -6,8 +6,8 @@
 
 const SITE = {
   name: "Oktay Ürekli",
-  // Unvan büyük harfle yazılır (Türkçe İ/I karışmasın diye CSS dönüştürmez).
-  title: { tr: "JUNIOR OYUN GELİŞTİRİCİ · UNITY", en: "JUNIOR GAME DEVELOPER · UNITY" },
+  // Unvan olduğu gibi gösterilir; CSS hiçbir metni büyük harfe çevirmez (Türkçe İ/I karışmasın).
+  title: { tr: "Junior Oyun Geliştirici · Unity", en: "Junior Game Developer · Unity" },
   email: "oktay.u.bm@gmail.com",
 
   links: {
@@ -31,19 +31,19 @@ const EXPERIENCE = [
     url: "https://bambugames.com.tr/",
     date: { tr: "Ekim 2025 – Ekim 2026", en: "Oct 2025 – Oct 2026" },
     summary: {
-      tr: "Dijital oyun masası platformu için çok oyunculu oyunlar geliştirdim; mevcut oyunlarda performans, animasyon ve oyun hissiyatı iyileştirmeleri yaptım.",
-      en: "Built multiplayer games for a digital game-table platform and improved performance, animation and game feel across the existing catalogue.",
+      tr: "Dijital oyun masası platformu için çok oyunculu oyunlar geliştirdim; mevcut oyunların performansını, animasyonlarını ve oyun hissiyatını iyileştirdim.",
+      en: "Built multiplayer games for a digital game-table platform and improved the performance, animation and game feel of existing titles.",
     },
     stats: [
-      { value: "10", label: { tr: "uçtan uca geliştirilen oyun", en: "games built end-to-end" } },
-      { value: "30+", label: { tr: "revize edilen oyun", en: "games revised & improved" } },
+      { value: "10", label: { tr: "yazılımı tek başına geliştirilen oyun", en: "games programmed solo" } },
+      { value: "30+", label: { tr: "revize edilip iyileştirilen oyun", en: "games revised & improved" } },
     ],
   },
 ];
 
 const EDUCATION = [
   {
-    role: { tr: "Bilgisayar Mühendisliği, Lisans", en: "B.Sc. Computer Engineering" },
+    role: { tr: "Bilgisayar Mühendisliği, Lisans", en: "B.Sc. in Computer Engineering" },
     place: { tr: "Erciyes Üniversitesi", en: "Erciyes University" },
     date: { tr: "2020 – 2025", en: "2020 – 2025" },
   },
@@ -84,8 +84,8 @@ const PROJECTS = [
     logo: "assets/logos/basket-go.webp",
     genre: { tr: "2D Arcade Spor – PC", en: "2D Arcade Sports – PC" },
     desc: {
-      tr: "Dunk Hit'ten ilham alan, 1–6 oyunculu yerel arcade basketbol oyunu.",
-      en: "Dunk Hit-inspired local arcade basketball for 1–6 players.",
+      tr: "Dunk Hit'ten ilham alan, 1–6 oyunculu arcade basketbol oyunu.",
+      en: "Dunk Hit-inspired arcade basketball game for 1–6 players.",
     },
     url: BAMBU,
   },
@@ -95,7 +95,7 @@ const PROJECTS = [
     genre: { tr: "2D Klasik Masa Oyunu – PC", en: "2D Classic Board Game – PC" },
     desc: {
       tr: "Klasik Dots and Boxes oyununun dijital uyarlaması.",
-      en: "A digital adaptation of the classic Dots and Boxes.",
+      en: "Digital adaptation of the classic Dots and Boxes game.",
     },
     url: BAMBU,
   },
@@ -104,8 +104,8 @@ const PROJECTS = [
     logo: "assets/logos/what-am-i.webp",
     genre: { tr: "2D Parti Oyunu – PC", en: "2D Party Game – PC" },
     desc: {
-      tr: "\"Ben Kimim?\" oyununun dijital oyun masası uyarlaması; hayalet ekranlı 1v1 ve 2v2 modları.",
-      en: "A digital game-table take on \"Who Am I?\" with ghost-screen 1v1 and 2v2 modes.",
+      tr: "Hayalet ekranlı 1v1 ve 2v2 modlarıyla \"Ben Kimim?\" oyununun dijital uyarlaması.",
+      en: "Digital adaptation of \"Who Am I?\" with ghost-screen 1v1 and 2v2 modes.",
     },
     url: BAMBU,
   },
@@ -114,8 +114,8 @@ const PROJECTS = [
     logo: "assets/logos/carrom-bambu.webp",
     genre: { tr: "2D Klasik Masa Oyunu – PC", en: "2D Classic Board Game – PC" },
     desc: {
-      tr: "Resmi kurallara uygun, fizik tabanlı nişan ve vuruş mekanikli 1v1 / 2v2 Carrom.",
-      en: "Official-rules Carrom with physics-based aiming and shooting, in 1v1 / 2v2.",
+      tr: "Resmi kurallara uygun, fizik tabanlı nişan ve vuruş mekaniklerine sahip, 1v1 ve 2v2 modlu Carrom oyunu.",
+      en: "Carrom game following official rules, with physics-based aiming and shooting in 1v1 and 2v2 modes.",
     },
     url: BAMBU,
   },
@@ -125,7 +125,7 @@ const PROJECTS = [
     genre: { tr: "2D Klasik Masa Oyunu – PC", en: "2D Classic Board Game – PC" },
     desc: {
       tr: "Geleneksel Tombala'nın 2–6 oyunculu dijital uyarlaması.",
-      en: "A 2–6 player digital adaptation of traditional Tombala.",
+      en: "Digital adaptation of traditional Tombala for 2–6 players.",
     },
     url: BAMBU,
   },
@@ -164,8 +164,8 @@ const PROJECTS = [
     logo: "assets/logos/slea.webp",
     genre: { tr: "3D Dungeon Crawler – PC / Web", en: "3D Dungeon Crawler – PC / Web" },
     desc: {
-      tr: "10 bölüm ve 14 NPC içeren, yakın ve menzilli dövüşlü izometrik aksiyon oyunu.",
-      en: "Isometric action game with 10 levels, 14 NPCs, and melee and ranged combat.",
+      tr: "Yakın ve menzilli dövüş sistemine sahip, 10 bölüm ve 14 NPC içeren izometrik aksiyon oyunu.",
+      en: "Isometric action game with melee and ranged combat, 10 levels and 14 NPCs.",
     },
     url: "https://oktay-urekli.itch.io/slea",
   },
@@ -174,8 +174,8 @@ const PROJECTS = [
     logo: "assets/logos/anomaly-rocket.webp",
     genre: { tr: "2.5D Parkur Platform – PC / Web", en: "2.5D Parkour Platformer – PC / Web" },
     desc: {
-      tr: "7 farklı roket ve 10 bölümden oluşan, bölüm tabanlı platform oyunu.",
-      en: "Level-based platformer with 7 unique rockets and 10 levels.",
+      tr: "7 farklı roket ve 10 bölüm içeren platform oyunu.",
+      en: "Platformer with 7 distinct rockets and 10 levels.",
     },
     url: "https://oktay-urekli.itch.io/anomaly-rocket",
   },
@@ -192,6 +192,6 @@ const UI_TEXT = {
   experience: { tr: "Deneyim", en: "Experience" },
   education: { tr: "Eğitim", en: "Education" },
   projects: { tr: "Projeler", en: "Projects" },
-  projectsCount: { tr: "{n} oyun · yeniden eskiye", en: "{n} games · newest first" },
+  projectsCount: { tr: "{n} oyun · en yeniden eskiye", en: "{n} games · newest first" },
   logoSoon: { tr: "logo yakında", en: "logo soon" },
 };

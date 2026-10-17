@@ -57,7 +57,11 @@ Yol boş bırakılırsa buton pasif görünür ve "Yakında" yazar.
 
 ## Önbellek (sürüm numarası)
 
-`index.html`'in sonunda dosyalar `js/data.js?v=7` gibi bir sürüm numarasıyla yüklenir. `js/` veya `css/` içindeki bir dosyayı değiştirdiğinizde bu sayıyı (üç yerde) bir artırın; böylece ziyaretçilerin tarayıcısı önbellekteki eski dosyayı kullanmaz.
+`index.html`'in sonunda dosyalar `js/data.js?v=8` gibi bir sürüm numarasıyla yüklenir. `js/` veya `css/` içindeki bir dosyayı değiştirdiğinizde bu sayıyı (üç yerde) bir artırın; böylece ziyaretçilerin tarayıcısı önbellekteki eski dosyayı kullanmaz.
+
+## Büyük/küçük harf
+
+CSS metinleri büyük harfe çevirmez; büyük/küçük harf `data.js`'te nasıl yazıldıysa sitede de öyle görünür.
 
 ## Yerelde önizleme
 
@@ -69,4 +73,4 @@ python3 -m http.server 8000
 
 ## Lisanslar
 
-İkonlar: [Font Awesome Free 6.5.2](https://fontawesome.com/license/free) (CC BY 4.0). Fontlar: Patrick Hand ve Nunito (Google Fonts, SIL OFL).
+İkonlar: [Font Awesome Free 6.5.2](https://fontawesome.com/license/free) (CC BY 4.0). Fontlar: Shantell Sans ve Nunito (Google Fonts, SIL OFL).
