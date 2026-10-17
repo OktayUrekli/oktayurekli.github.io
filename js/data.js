@@ -56,7 +56,7 @@ const PROJECTS = [
   {
     name: "Tap Target",
     logo: "assets/logos/tap-target.webp",
-    genre:  tr: "2D Arcade – PC", en: "2D Arcade – PC",
+    genre: { tr: "2D Arcade – PC", en: "2D Arcade – PC" },
     desc:{
       tr: "Refleks-Zamanlama tabanlı,1-6 kişilik arcade oyun",
       en: "Reflex- and timing-based arcade game for 1–6 players",
@@ -66,7 +66,7 @@ const PROJECTS = [
   {
     name: "Block Rain",
     logo: "assets/logos/block-rain.webp",
-    genre:  "2D Arcade – PC", en: "2D Arcade – PC",,
+    genre: { tr: "2D Arcade – PC", en: "2D Arcade – PC" },
     desc: {
       tr: "Tetris'ten ilham alan, 1–6 oyunculu arcade oyun",
       en: "An arcade game for 1–6 players, inspired by Tetris",
@@ -136,7 +136,7 @@ const PROJECTS = [
   {
     name: "Pin Pin",
     logo: "assets/logos/pin-pin.webp",
-    genre: tr: "2D Arcade – PC", en: "2D Arcade – PC",
+    genre: { tr: "2D Arcade – PC", en: "2D Arcade – PC" },
     desc: {
       tr: "2–6 oyuncunun birlikte oynadığı Refleks & Zamanlama türünde arcade takım oyunu",
       en: "An arcade team game of the reflex & timing genre, played by 2–6 players together",
