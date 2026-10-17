@@ -1,0 +1,432 @@
+/* =====================================================================
+   Renkler ve temel ölçüler — tasarımı buradan değiştirebilirsiniz
+   ===================================================================== */
+:root {
+  --field: #4f8a62;        /* yeşil zemin */
+  --field-dark: #3f7452;
+  --ink: #3a1f1d;          /* kalın koyu kahve çizgiler */
+  --paper: #fdf6e8;        /* krem kağıt */
+  --blue: #3f6fe0;
+  --blue-light: #9fd0f5;
+  --pink: #f2679a;
+  --pink-soft: #f6c9d6;
+  --yellow: #ffe066;
+  --green: #a9dca3;
+  --white: #ffffff;
+
+  --line: 3px;
+  --radius: 14px;
+  --shadow: 6px 6px 0 var(--ink);
+  --font-hand: "Patrick Hand", "Comic Sans MS", cursive;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--field);
+  /* hafif kağıt dokusu */
+  background-image:
+    radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1.5px),
+    radial-gradient(rgba(0, 0, 0, .06) 1px, transparent 1.5px);
+  background-size: 22px 22px, 31px 31px;
+  background-position: 0 0, 11px 7px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; }
+
+.ico { width: 1em; height: 1em; fill: currentColor; flex-shrink: 0; }
+
+/* Pembe-beyaz damalı şerit */
+.checker {
+  height: 18px;
+  background: repeating-conic-gradient(var(--pink-soft) 0 25%, var(--white) 0 50%) 0 0 / 18px 18px;
+  flex-shrink: 0;
+}
+
+/* =====================================================================
+   Üst menü
+   ===================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 10px 16px;
+}
+.nav__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 10px 8px 18px;
+  background: var(--blue);
+  border: var(--line) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.nav__brand {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+  margin-right: auto;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+.nav__links { display: flex; gap: 6px; }
+.nav__links a {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--white);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.nav__links a:hover { background: rgba(255, 255, 255, .18); }
+
+.lang { display: flex; gap: 6px; }
+.lang__btn {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  min-width: 44px;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: var(--ink);
+  background: var(--white);
+  border: var(--line) solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.lang__btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.lang__btn.is-active { background: var(--yellow); }
+.lang__btn:focus-visible, .btn:focus-visible, .icon-btn:focus-visible, .card:focus-visible {
+  outline: 3px dashed var(--yellow);
+  outline-offset: 3px;
+}
+
+/* =====================================================================
+   Retro pencere
+   ===================================================================== */
+.window {
+  background: var(--paper);
+  border: var(--line) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.window__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 12px;
+  background: var(--blue);
+  border-bottom: var(--line) solid var(--ink);
+}
+.window__bar--pink { background: var(--pink); }
+.window__bar--yellow { background: var(--yellow); }
+.window__bar--yellow .window__title { color: var(--ink); text-shadow: none; }
+.window__title {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.window__btns { display: flex; gap: 6px; flex-shrink: 0; }
+.window__btns i {
+  width: 18px;
+  height: 14px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  background: var(--yellow);
+}
+.window__btns i:nth-child(2) { background: var(--green); }
+.window__btns i:nth-child(3) { background: var(--pink); }
+.window__body { padding: 22px 24px; }
+
+/* =====================================================================
+   Giriş
+   ===================================================================== */
+.hero {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 16px 32px;
+}
+.window--hero { max-width: 720px; margin: 0 auto; }
+.hero__body {
+  text-align: center;
+  padding: 40px 24px 36px;
+  background: linear-gradient(180deg, var(--blue-light) 0%, #cfe8fb 100%);
+}
+.hero__name {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 8vw, 4.4rem);
+  line-height: 1;
+  margin: 0 0 8px;
+  color: var(--white);
+  text-shadow: 3px 3px 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
+}
+.hero__title {
+  display: inline-block;
+  margin: 6px 0 18px;
+  padding: 4px 16px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  background: var(--yellow);
+  border: var(--line) solid var(--ink);
+  border-radius: 999px;
+  transform: rotate(-1.5deg);
+}
+.hero__email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 0 auto 22px;
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.hero__email:hover span { text-decoration: underline; text-decoration-thickness: 2px; }
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.icon-btn, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  border: var(--line) solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.icon-btn { width: 50px; height: 50px; font-size: 1.35rem; }
+.btn { height: 50px; padding: 0 18px; font-weight: 800; font-size: 1rem; }
+.icon-btn:hover, .btn:not(.is-disabled):hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+.icon-btn--blue { background: var(--blue-light); }
+.icon-btn--yellow { background: var(--yellow); }
+.icon-btn--pink { background: var(--pink-soft); }
+.btn--green { background: var(--green); }
+.btn.is-disabled {
+  cursor: not-allowed;
+  opacity: .6;
+  box-shadow: none;
+  background: #e4e4e4;
+}
+
+/* =====================================================================
+   Bölümler
+   ===================================================================== */
+.section {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+.section__title {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  text-align: center;
+  color: var(--white);
+  margin: 0 0 28px;
+  text-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Deneyim & Eğitim */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 28px;
+  align-items: start;
+}
+.entry + .entry { margin-top: 18px; padding-top: 18px; border-top: 2px dashed rgba(58, 31, 29, .3); }
+.entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.entry__role { margin: 0; font-size: 1.1rem; font-weight: 800; }
+.entry__date {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  padding: 0 8px;
+  background: var(--pink-soft);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+.entry__place {
+  display: inline-block;
+  margin: 6px 0 0;
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--blue);
+  text-decoration: none;
+}
+a.entry__place:hover { text-decoration: underline; }
+.stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+}
+.stat__value {
+  font-family: var(--font-hand);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--pink);
+  text-shadow: 1px 1px 0 var(--ink);
+}
+.stat__label { font-weight: 700; font-size: .95rem; }
+
+/* =====================================================================
+   Projeler
+   ===================================================================== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+.card {
+  --tilt: 0deg;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px;
+  text-decoration: none;
+  background: var(--paper);
+  border: var(--line) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover, .card:focus-visible {
+  transform: scale(1.045) rotate(var(--tilt));
+  box-shadow: 9px 9px 0 var(--ink);
+  z-index: 1;
+}
+.card__logo {
+  flex: 0 0 auto;
+  width: 132px;
+  aspect-ratio: 1;
+  border: var(--line) solid var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
+}
+.card__logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__logo--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: repeating-linear-gradient(45deg, var(--blue-light) 0 10px, #b9ddf7 10px 20px);
+}
+.card__initials {
+  font-family: var(--font-hand);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+.card__soon { font-size: .75rem; font-weight: 700; }
+.card__info { min-width: 0; }
+.card__name {
+  margin: 0 0 4px;
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.card__genre {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 1px 8px;
+  font-size: .8rem;
+  font-weight: 800;
+  background: var(--green);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+.card__desc { margin: 0 0 8px; font-size: .95rem; line-height: 1.4; }
+.card__link { font-size: .8rem; font-weight: 700; color: var(--blue); }
+.card__link .ico { width: .7rem; height: .7rem; vertical-align: -1px; }
+
+/* =====================================================================
+   Alt bilgi
+   ===================================================================== */
+.footer {
+  margin-top: auto;
+  padding: 24px 16px;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--white);
+  background: var(--field-dark);
+  border-top: var(--line) solid var(--ink);
+}
+.footer p { margin: 0; }
+
+/* =====================================================================
+   Kaydırınca belirme
+   ===================================================================== */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+.card.reveal.is-visible { transition: opacity .5s ease, transform .2s ease, box-shadow .2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card, .icon-btn, .btn, .lang__btn { transition: none; }
+  .card:hover, .card:focus-visible { transform: none; }
+}
+
+/* =====================================================================
+   Mobil
+   ===================================================================== */
+@media (max-width: 860px) {
+  .cv-grid { grid-template-columns: 1fr; }
+  .projects { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .nav { padding: 8px 10px; }
+  .nav__inner { gap: 8px; padding: 6px 8px 6px 12px; }
+  .nav__brand { font-size: 1.2rem; }
+  .nav__links { display: none; }
+  .hero { padding-top: 28px; }
+  .window__body { padding: 18px 16px; }
+  .card { gap: 14px; padding: 12px; }
+  .card__logo { width: 96px; }
+  .card__name { font-size: 1.35rem; }
+  .card__desc { font-size: .9rem; }
+}
