@@ -140,8 +140,17 @@
       const name = el("h3", "card__name", p.name);
       name.lang = "en";
       info.append(name);
-      if (p.genre) info.append(el("p", "card__genre", t(p.genre)));
-      info.append(el("p", "card__desc", t(p.desc)));
+      if (p.genre) {
+        // "– PC / Web" gibi platform kısmı satır sonunda bölünmesin
+        const g = el("p", "card__genre");
+        const s = t(p.genre);
+        const cut = s.lastIndexOf(" – ");
+        if (cut < 0) g.textContent = s;
+        else g.append(s.slice(0, cut) + " ", el("span", "card__platform", s.slice(cut + 1)));
+        info.append(g);
+      }
+      // "1–6" gibi sayı aralıkları iki satıra bölünmesin (kelime birleştirici)
+      info.append(el("p", "card__desc", t(p.desc).replace(/(\d)–(\d)/g, "$1–\u2060$2")));
 
       card.append(logo, info);
       row.append(card);
@@ -161,16 +170,18 @@
     document.title = t(UI_TEXT.pageTitle);
   }
 
-  let firstRender = true;
   function render() {
     renderStatic();
     renderHero();
     renderTimeline("experience-list", EXPERIENCE);
     renderTimeline("education-list", EDUCATION);
+    // Dil değişiminde yalnızca daha önce görünmüş kartlar görünür kalsın (tekrar
+    // animasyon oynamasın); henüz görünmemiş kartlar ve pencereler sırasını beklesin.
+    const oldCards = [...document.querySelectorAll("#project-list .card")];
+    const shown = oldCards.map((c) => c.classList.contains("is-visible"));
+    if (observer) oldCards.forEach((c) => observer.unobserve(c));
     renderProjects();
-    // Dil değişiminde yeniden çizilen kartlar tekrar animasyonla belirmesin
-    if (!firstRender) document.querySelectorAll(".reveal").forEach((n) => n.classList.add("is-visible"));
-    firstRender = false;
+    document.querySelectorAll("#project-list .card").forEach((c, i) => { if (shown[i]) c.classList.add("is-visible"); });
     observeReveals();
   }
 
@@ -217,4 +228,5 @@
   document.documentElement.classList.add("reveal-on");
   document.getElementById("year").textContent = new Date().getFullYear();
   safeRender();
+  window.__rendered = true;   // index.html'deki son güvenlik kontrolü bunu okur
 })();

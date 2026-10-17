@@ -35,7 +35,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Shantell+Sans:wght@500..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
+  <!-- Belirme animasyonu ilk boyamadan itibaren devrede olsun (çift giriş efekti olmasın) -->
+  <script>document.documentElement.classList.add("reveal-on")</script>
 </head>
 <body>
   <!-- İkonlar: Font Awesome Free 6.5.2 (CC BY 4.0) -->
@@ -100,7 +102,7 @@
         <a class="icon-btn icon-btn--peri" id="link-github" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
         <a class="icon-btn icon-btn--pink" id="link-itch" target="_blank" rel="noopener" aria-label="itch.io"><svg class="ico" aria-hidden="true"><use href="#i-itch"/></svg></a>
         <a class="addressbar" id="hero-email"><span class="addressbar__text"></span><span class="caret" aria-hidden="true"></span><span class="addressbar__cap" aria-hidden="true"><svg class="ico"><use href="#i-mail"/></svg></span></a>
-        <a class="btn" id="cv-btn"><svg class="ico ico--on" aria-hidden="true"><use href="#i-cv"/></svg><svg class="ico ico--off" aria-hidden="true"><use href="#i-lock"/></svg><span></span></a>
+        <a class="btn" id="cv-btn" role="link"><svg class="ico ico--on" aria-hidden="true"><use href="#i-cv"/></svg><svg class="ico ico--off" aria-hidden="true"><use href="#i-lock"/></svg><span></span></a>
       </div>
     </section>
 
@@ -171,7 +173,9 @@
   </footer>
 
   <!-- ?v=… : dosyaları değiştirdiğinizde bu sayıyı artırın, tarayıcılar eski sürümü önbellekten kullanmasın -->
-  <script src="js/data.js?v=8"></script>
-  <script src="js/main.js?v=8"></script>
+  <script src="js/data.js?v=9"></script>
+  <script src="js/main.js?v=9"></script>
+  <!-- Güvenlik ağı: betikler yüklenemez ya da hata verirse içerik gizli kalmasın -->
+  <script>window.__rendered || document.documentElement.classList.remove("reveal-on")</script>
 </body>
 </html>

@@ -7,7 +7,8 @@
 const SITE = {
   name: "Oktay Ürekli",
   // Unvan olduğu gibi gösterilir; CSS hiçbir metni büyük harfe çevirmez (Türkçe İ/I karışmasın).
-  title: { tr: "Junior Oyun Geliştirici · Unity", en: "Junior Game Developer · Unity" },
+  // "\u00a0" bölünmez boşluktur: "· Unity" önceki kelimeden ayrılıp tek başına alt satıra düşmesin.
+  title: { tr: "Junior Oyun Geliştirici\u00a0·\u00a0Unity", en: "Junior Game Developer\u00a0·\u00a0Unity" },
   email: "oktay.u.bm@gmail.com",
 
   links: {
