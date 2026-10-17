@@ -4,12 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Oktay Ürekli · Unity Game Developer</title>
-  <meta name="description" content="Oktay Ürekli — Unity oyun geliştirici portfolyosu / Unity game developer portfolio.">
+  <meta name="description" content="Oktay Ürekli — Junior Unity game developer. Portfolio of multiplayer arcade, board and action games built with Unity and C#.">
+  <meta name="author" content="Oktay Ürekli">
+  <meta name="theme-color" content="#4f8a62">
+  <link rel="canonical" href="https://oktayurekli.github.io/">
   <meta property="og:title" content="Oktay Ürekli · Unity Game Developer">
-  <meta property="og:description" content="Unity oyun geliştirici portfolyosu / Unity game developer portfolio.">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="Junior Unity game developer — portfolio of 12 games built with Unity and C#.">
+  <meta property="og:type" content="profile">
   <meta property="og:url" content="https://oktayurekli.github.io/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Oktay Ürekli",
+    "jobTitle": "Junior Unity Game Developer",
+    "url": "https://oktayurekli.github.io/",
+    "email": "mailto:oktay.u.bm@gmail.com",
+    "alumniOf": "Erciyes University",
+    "knowsAbout": ["Unity", "C#", "Game Development"],
+    "sameAs": [
+      "https://www.linkedin.com/in/oktay-urekli",
+      "https://github.com/OktayUrekli",
+      "https://oktay-urekli.itch.io/"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +61,7 @@
     <section class="hero">
       <div class="window window--hero reveal">
         <div class="window__bar">
-          <span class="window__title">player_1.exe</span>
+          <span class="window__title">portfolio.exe</span>
           <span class="window__btns" aria-hidden="true"><i></i><i></i><i></i></span>
         </div>
         <div class="window__body hero__body">
@@ -68,12 +89,21 @@
           </div>
           <div class="window__body" id="experience-list"></div>
         </div>
-        <div class="window reveal">
-          <div class="window__bar window__bar--yellow">
-            <span class="window__title" data-i18n="education"></span>
-            <span class="window__btns" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div class="cv-grid__side">
+          <div class="window reveal">
+            <div class="window__bar window__bar--yellow">
+              <span class="window__title" data-i18n="education"></span>
+              <span class="window__btns" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+            <div class="window__body" id="education-list"></div>
           </div>
-          <div class="window__body" id="education-list"></div>
+          <div class="window reveal">
+            <div class="window__bar window__bar--green">
+              <span class="window__title" data-i18n="skills"></span>
+              <span class="window__btns" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+            <div class="window__body"><ul class="skills" id="skill-list"></ul></div>
+          </div>
         </div>
       </div>
     </section>
@@ -81,6 +111,7 @@
     <!-- Projeler -->
     <section class="section" id="projects">
       <h2 class="section__title" data-i18n="projects"></h2>
+      <p class="section__sub" id="projects-sub"></p>
       <div class="projects" id="project-list"></div>
     </section>
   </main>

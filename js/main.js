@@ -57,7 +57,7 @@
     items.forEach((item) => {
       const row = el("div", "entry");
       const head = el("div", "entry__head");
-      head.append(el("h3", "entry__role", t(item.role)), el("span", "entry__date", item.date));
+      head.append(el("h3", "entry__role", t(item.role)), el("span", "entry__date", t(item.date)));
       row.append(head);
 
       const placeName = t(item.place);
@@ -70,6 +70,8 @@
       } else {
         row.append(el("p", "entry__place", placeName));
       }
+
+      if (item.summary) row.append(el("p", "entry__summary", t(item.summary)));
 
       if (item.stats && item.stats.length) {
         const stats = el("div", "stats");
@@ -84,19 +86,25 @@
     });
   }
 
+  function renderSkills() {
+    const list = document.getElementById("skill-list");
+    list.replaceChildren(...SKILLS.map((s) => el("li", "skill", t(s))));
+  }
+
   function initials(name) {
     return name.split(/[\s:]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   }
 
   function renderProjects() {
+    document.getElementById("projects-sub").textContent = t(UI_TEXT.projectsCount).replace("{n}", PROJECTS.length);
     const list = document.getElementById("project-list");
     list.replaceChildren();
-    PROJECTS.forEach((p, i) => {
+    PROJECTS.forEach((p) => {
       const card = el("a", "card reveal");
       card.href = p.url;
       card.target = "_blank";
       card.rel = "noopener";
-      card.style.setProperty("--tilt", (i % 2 ? 1 : -1) * 0.6 + "deg");
+      card.setAttribute("aria-label", p.name + " — " + t(p.org || p.url));
 
       const logo = el("div", "card__logo");
       if (p.logo) {
@@ -117,9 +125,13 @@
       if (p.genre) info.append(el("p", "card__genre", t(p.genre)));
       info.append(el("p", "card__desc", t(p.desc)));
 
+      // Alt etiket: "Bambu Games" ya da "Bitirme Projesi · itch.io"
       const host = new URL(p.url).hostname.replace(/^www\./, "");
+      const parts = [t(p.org)];
+      if (host.endsWith("itch.io")) parts.push("itch.io");
       const go = el("span", "card__link");
-      go.textContent = host + " ";
+      go.textContent = parts.filter(Boolean).join(" · ") || host;
+      go.append(" ");
       go.insertAdjacentHTML("beforeend", '<svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg>');
       info.append(go);
 
@@ -138,6 +150,7 @@
       b.setAttribute("aria-pressed", active);
     });
     document.documentElement.lang = lang;
+    document.title = t(UI_TEXT.pageTitle);
   }
 
   let firstRender = true;
@@ -146,6 +159,7 @@
     renderHero();
     renderTimeline("experience-list", EXPERIENCE);
     renderTimeline("education-list", EDUCATION);
+    renderSkills();
     renderProjects();
     // Dil değişiminde yeniden çizilen kartlar tekrar animasyonla belirmesin
     if (!firstRender) document.querySelectorAll(".reveal").forEach((n) => n.classList.add("is-visible"));
