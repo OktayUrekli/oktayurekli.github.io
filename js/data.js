@@ -5,7 +5,7 @@
 
 const SITE = {
   name: "Oktay Ürekli",
-  title: { tr: "Unity Oyun Geliştirici", en: "Unity Game Developer" },
+  title: { tr: "Jr. Oyun Geliştirici | Unity", en: "Jr. Game Developer | Unity" },
   email: "oktay.u.bm@gmail.com",
 
   links: {
@@ -56,15 +56,21 @@ const PROJECTS = [
   {
     name: "Tap Target",
     logo: "assets/logos/tap-target.webp",
-    genre: null,
-    desc: SOON,
+    genre:  tr: "2D Arcade – PC", en: "2D Arcade – PC",
+    desc:{
+      tr: "Refleks-Zamanlama tabanlı,1-6 kişilik arcade oyun",
+      en: "Reflex- and timing-based arcade game for 1–6 players",
+    },
     url: BAMBU,
   },
   {
     name: "Block Rain",
     logo: "assets/logos/block-rain.webp",
-    genre: null,
-    desc: SOON,
+    genre:  "2D Arcade – PC", en: "2D Arcade – PC",,
+    desc: {
+      tr: "Tetris'ten ilham alan, 1–6 oyunculu arcade oyun",
+      en: "An arcade game for 1–6 players, inspired by Tetris",
+    },
     url: BAMBU,
   },
   {
@@ -80,15 +86,21 @@ const PROJECTS = [
   {
     name: "Dots And Boxes",
     logo: "assets/logos/dots-and-boxes.webp",
-    genre: null,
-    desc: SOON,
+    genre: { tr: "2D Klasik Masa Oyunu – PC", en: "2D Classic Board Game – PC" },
+    desc: {
+      tr: "Klasik Dots And Boxes oyunu uyarlaması",
+      en: "An adaptation of the classic Dots and Boxes game",
+    },
     url: BAMBU,
   },
   {
     name: "What Am I?",
     logo: "assets/logos/what-am-i.webp",
-    genre: null,
-    desc: SOON,
+    genre: { tr: "2D Klasik Masa Oyunu – PC", en: "2D Classic Board Game – PC" },
+    desc: {
+      tr: "Dijital oyun masasında hayalet ekran ile, solo(1vs1) ve takımlı(2vs2) olarak oynanan, Ben Kimim? oyununun uyarlaması",
+      en: "An adaptation of the game Who Am I?—played either solo (1v1) or in teams (2v2)—featuring a ghost screen on a digital game table.",
+    },
     url: BAMBU,
   },
   {
@@ -124,8 +136,11 @@ const PROJECTS = [
   {
     name: "Pin Pin",
     logo: "assets/logos/pin-pin.webp",
-    genre: null,
-    desc: SOON,
+    genre: tr: "2D Arcade – PC", en: "2D Arcade – PC",
+    desc: {
+      tr: "2–6 oyuncunun birlikte oynadığı Refleks & Zamanlama türünde arcade takım oyunu",
+      en: "An arcade team game of the reflex & timing genre, played by 2–6 players together",
+    },
     url: BAMBU,
   },
   {
