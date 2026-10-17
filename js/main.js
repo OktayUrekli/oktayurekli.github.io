@@ -104,7 +104,6 @@
       card.href = p.url;
       card.target = "_blank";
       card.rel = "noopener";
-      card.setAttribute("aria-label", p.name + " — " + t(p.org || p.url));
 
       const logo = el("div", "card__logo");
       if (p.logo) {
@@ -121,21 +120,16 @@
       }
 
       const info = el("div", "card__info");
-      info.append(el("h3", "card__name", p.name));
+      // Oyun adları İngilizce: büyük harfe çevrilirken "WİNG" yerine "WING" olsun
+      const name = el("h3", "card__name", p.name);
+      name.lang = "en";
+      info.append(name);
       if (p.genre) info.append(el("p", "card__genre", t(p.genre)));
       info.append(el("p", "card__desc", t(p.desc)));
 
-      // Alt etiket: "Bambu Games" ya da "Bitirme Projesi · itch.io"
-      const host = new URL(p.url).hostname.replace(/^www\./, "");
-      const parts = [t(p.org)];
-      if (host.endsWith("itch.io")) parts.push("itch.io");
-      const go = el("span", "card__link");
-      go.textContent = parts.filter(Boolean).join(" · ") || host;
-      go.append(" ");
-      go.insertAdjacentHTML("beforeend", '<svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg>');
-      info.append(go);
-
       card.append(logo, info);
+      // Sağ üst köşedeki turuncu etiket: "Bambu Games", "Bitirme Projesi" vb.
+      if (p.org) card.append(el("span", "card__badge", t(p.org)));
       list.append(card);
     });
   }
