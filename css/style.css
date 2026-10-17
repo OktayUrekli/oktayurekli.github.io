@@ -23,7 +23,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -53,46 +53,16 @@ a { color: inherit; }
 }
 
 /* =====================================================================
-   Üst menü
+   Dil seçimi (sağ üstte sabit)
    ===================================================================== */
-.nav {
-  position: sticky;
-  top: 0;
+.lang {
+  position: fixed;
+  top: 28px;
+  right: 16px;
   z-index: 10;
-  padding: 10px 16px;
-}
-.nav__inner {
-  max-width: 1080px;
-  margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 10px 8px 18px;
-  background: var(--blue);
-  border: var(--line) solid var(--ink);
-  border-radius: var(--radius);
-  box-shadow: 4px 4px 0 var(--ink);
+  gap: 6px;
 }
-.nav__brand {
-  font-family: var(--font-hand);
-  font-size: 1.5rem;
-  color: var(--white);
-  text-decoration: none;
-  margin-right: auto;
-  text-shadow: 2px 2px 0 var(--ink);
-}
-.nav__links { display: flex; gap: 6px; }
-.nav__links a {
-  font-family: var(--font-hand);
-  font-size: 1.2rem;
-  color: var(--white);
-  text-decoration: none;
-  padding: 4px 10px;
-  border-radius: 8px;
-}
-.nav__links a:hover { background: rgba(255, 255, 255, .18); }
-
-.lang { display: flex; gap: 6px; }
 .lang__btn {
   font-family: var(--font-hand);
   font-size: 1.1rem;
@@ -419,11 +389,8 @@ a.entry__place:hover { text-decoration: underline; }
   .projects { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .nav { padding: 8px 10px; }
-  .nav__inner { gap: 8px; padding: 6px 8px 6px 12px; }
-  .nav__brand { font-size: 1.2rem; }
-  .nav__links { display: none; }
-  .hero { padding-top: 28px; }
+  .lang { top: 24px; right: 10px; }
+  .hero { padding-top: 64px; }
   .window__body { padding: 18px 16px; }
   .card { gap: 14px; padding: 12px; }
   .card__logo { width: 96px; }

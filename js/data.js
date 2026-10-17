@@ -180,7 +180,6 @@ const PROJECTS = [
 // ---------------------------------------------------------------------
 const UI_TEXT = {
   navExperience: { tr: "Deneyim & Eğitim", en: "Experience & Education" },
-  navProjects: { tr: "Projeler", en: "Projects" },
   cvDownload: { tr: "CV İndir", en: "Download CV" },
   cvSoon: { tr: "CV · Yakında", en: "CV · Soon" },
   experience: { tr: "Deneyim", en: "Experience" },
