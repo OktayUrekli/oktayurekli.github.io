@@ -180,10 +180,22 @@
     b.addEventListener("click", () => {
       lang = b.dataset.lang;
       try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* yok say */ }
-      render();
+      safeRender();
     });
   });
 
+  // Belirme animasyonu yalnızca sayfa sorunsuz çizilirse açık kalır; bir hata
+  // olursa içerik gizli kalmasın diye animasyon kapatılır.
+  function safeRender() {
+    try {
+      render();
+    } catch (e) {
+      document.documentElement.classList.remove("reveal-on");
+      throw e;
+    }
+  }
+
+  document.documentElement.classList.add("reveal-on");
   document.getElementById("year").textContent = new Date().getFullYear();
-  render();
+  safeRender();
 })();

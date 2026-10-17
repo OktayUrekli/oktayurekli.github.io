@@ -56,6 +56,10 @@ Hepsi `js/data.js` içinde yapılır. Her metnin `tr` ve `en` karşılığı var
 
 Yol boş bırakılırsa buton pasif görünür ve "Yakında" yazar.
 
+## Önbellek (sürüm numarası)
+
+`index.html`'in sonunda dosyalar `js/data.js?v=4` gibi bir sürüm numarasıyla yüklenir. `js/` veya `css/` içindeki bir dosyayı değiştirdiğinizde bu sayıyı (üç yerde) bir artırın; böylece ziyaretçilerin tarayıcısı önbellekteki eski dosyayı kullanmaz.
+
 ## Yerelde önizleme
 
 Klasörde bir terminal açıp şunu çalıştırın, ardından tarayıcıda `http://localhost:8000` adresini açın:
