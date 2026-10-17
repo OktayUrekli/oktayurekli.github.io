@@ -2,16 +2,19 @@
    Renkler ve temel ölçüler — tasarımı buradan değiştirebilirsiniz
    ===================================================================== */
 :root {
-  --bg: #2a2540;            /* sayfa arka planı (koyu mor) */
-  --shell: #4e5070;         /* konsol gövdesi */
-  --shell-dark: #3d3f5a;
-  --shell-edge: #5d6082;
-  --lcd: #a5c41b;           /* lime LCD ekran */
-  --lcd-light: #b9d63a;
-  --lcd-dark: #7f9a12;      /* ekran / buton altı gölge */
-  --ink: #1c1c1a;           /* siyah çizgiler ve yazılar */
-  --green: #22c43a;         /* omuz tuşları / aktif */
-  --green-dark: #179a2b;
+  --bg: #0f1d22;            /* sayfa arka planı (konsolun dışı) */
+  --shell-top: #2cc7cf;     /* konsol gövdesi: turkuazdan yeşile */
+  --shell-bottom: #33d688;
+  --shell-dark: #157f93;    /* gövde kenarı / çentik */
+  --shell-edge: #1d6fb0;    /* kenardaki mavi çizgi */
+  --lcd: #b9f3dc;           /* nane yeşili ekran */
+  --lcd-light: #ccf8e8;
+  --lcd-dark: #8fd9bd;      /* ekran / buton altı gölge */
+  --ink: #1d1d1b;           /* siyah çizgiler ve yazılar */
+  --navy: #29224f;          /* omuz tuşları */
+  --navy-dark: #1b1638;
+  --gold: #f6c945;
+  --plate: #135f73;         /* üstteki isim plakası */
   --led: #f3ea47;
   --white: #f4f4ee;
 
@@ -46,12 +49,19 @@ a { color: inherit; }
   max-width: 1120px;
   margin: 0 auto;
   padding: 64px 34px 26px;
-  background: var(--shell);
+  /* ejderha pulu deseni */
+  background:
+    radial-gradient(circle at 50% 0, transparent 62%, rgba(10, 70, 80, .22) 64% 72%, transparent 74%) 0 0 / 30px 20px,
+    radial-gradient(circle at 50% 0, transparent 62%, rgba(10, 70, 80, .22) 64% 72%, transparent 74%) 15px 10px / 30px 20px,
+    linear-gradient(180deg, var(--shell-top) 0%, #2fcfb0 50%, var(--shell-bottom) 100%);
   border-radius: 44px;
   box-shadow:
-    inset 0 0 0 6px var(--shell-edge),
-    inset 0 -14px 0 var(--shell-dark),
-    0 18px 0 #1d1a2e;
+    inset 0 0 0 5px var(--shell-dark),
+    inset 0 0 0 9px rgba(255, 255, 255, .18),
+    inset 14px 0 0 -4px var(--shell-edge),
+    inset -14px 0 0 -4px var(--shell-edge),
+    inset 0 -16px 0 var(--shell-dark),
+    0 18px 0 #0a1418;
   /* sağ üst köşedeki çentik */
   clip-path: polygon(0 0, calc(100% - 150px) 0, calc(100% - 110px) 34px, 100% 34px, 100% 100%, 0 100%);
 }
@@ -75,10 +85,10 @@ a { color: inherit; }
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: .12em;
-  color: var(--ink);
-  background: var(--green);
+  color: var(--lcd-light);
+  background: var(--plate);
+  border: 3px solid #0d4655;
   border-radius: 8px;
-  box-shadow: inset 0 -3px 0 var(--green-dark);
 }
 .device__led {
   position: absolute;
@@ -111,8 +121,8 @@ a { color: inherit; }
   font-size: 1.05rem;
   letter-spacing: .08em;
   cursor: pointer;
-  color: var(--white);
-  background: var(--shell-dark);
+  color: var(--gold);
+  background: var(--navy);
   border: 3px solid var(--ink);
   border-radius: 999px;
   box-shadow: 0 4px 0 var(--ink);
@@ -120,7 +130,7 @@ a { color: inherit; }
 }
 .lang__btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ink); }
 .lang__btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
-.lang__btn.is-active { color: var(--ink); background: var(--green); }
+.lang__btn.is-active { color: var(--navy); background: var(--gold); }
 .lang__btn:focus-visible, .btn:focus-visible, .icon-btn:focus-visible, .card:focus-visible {
   outline: 3px dashed var(--led);
   outline-offset: 4px;
@@ -132,9 +142,13 @@ a { color: inherit; }
 .screen {
   position: relative;
   padding: 34px 30px 30px;
-  background: var(--lcd);
+  /* sağ üstte soluk hilal */
+  background:
+    radial-gradient(circle at calc(100% - 92px) 58px, var(--lcd) 0 40px, transparent 41px) no-repeat,
+    radial-gradient(circle at calc(100% - 74px) 70px, rgba(255, 255, 255, .55) 0 44px, transparent 45px) no-repeat,
+    var(--lcd);
   border-radius: var(--radius);
-  box-shadow: inset 0 -8px 0 var(--lcd-dark), 0 0 0 4px var(--shell-dark);
+  box-shadow: inset 0 -8px 0 var(--lcd-dark), 0 0 0 4px var(--shell-dark), 0 6px 0 4px rgba(10, 70, 80, .25);
 }
 .screen + .screen { margin-top: 30px; }
 .screen:has(.screen__tab) { padding-top: 78px; }
@@ -348,10 +362,26 @@ p.entry__place { text-decoration: none; }
 /* =====================================================================
    Projeler — oyundaki kalın çerçeveli ödül kutuları gibi
    ===================================================================== */
-.projects {
+.projects { display: flex; flex-direction: column; gap: 30px; }
+.project-row {
+  position: relative;
+  z-index: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  gap: 40px;
+}
+/* "DAY 2 — DAY 3" kutularını bağlayan kalın siyah çizgi */
+.project-row::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: -30px;
+  right: -30px;
+  height: 6px;
+  margin-top: -3px;
+  background: var(--ink);
+  border-radius: 3px;
 }
 .card {
   position: relative;
@@ -432,19 +462,35 @@ p.entry__place { text-decoration: none; }
   font-weight: 600;
   font-size: 1.05rem;
   letter-spacing: .08em;
-  color: rgba(244, 244, 238, .75);
+  color: #0d4655;
 }
 .footer p { margin: 0; }
+.footer__controls { display: flex; align-items: flex-end; justify-content: center; gap: 28px; }
 .footer__pill {
   display: grid;
   place-items: center;
   width: 150px;
-  height: 40px;
-  background: var(--green);
+  height: 42px;
+  background: var(--navy);
   border-radius: 999px;
-  box-shadow: inset 0 -6px 0 var(--green-dark), 0 4px 0 #1d1a2e;
+  box-shadow: inset 0 -6px 0 var(--navy-dark), 0 4px 0 rgba(10, 70, 80, .4);
 }
-.footer__pill i { width: 14px; height: 14px; border-radius: 3px; background: var(--shell-dark); }
+.footer__pill i { width: 16px; height: 16px; border-radius: 3px; background: var(--gold); }
+/* L / R omuz tuşları */
+.shoulder {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 74px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  color: var(--gold);
+  background: var(--navy);
+  border-radius: 16px 8px 14px 14px;
+  clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
+  box-shadow: inset 0 4px 0 #3b3378, inset 0 -6px 0 var(--navy-dark);
+}
+.shoulder:last-child { clip-path: polygon(0 0, 100% 18%, 100% 100%, 0 100%); }
 
 /* =====================================================================
    Kaydırınca belirme (yalnızca JS sorunsuz çalışınca)
@@ -465,7 +511,10 @@ p.entry__place { text-decoration: none; }
    ===================================================================== */
 @media (max-width: 860px) {
   .cv-grid { grid-template-columns: 1fr; }
-  .projects { grid-template-columns: 1fr; }
+  .project-row { grid-template-columns: 1fr; gap: 30px; }
+  .project-row::before { top: -30px; bottom: -30px; left: 50%; right: auto; width: 6px; height: auto; margin: 0 0 0 -3px; }
+  .project-row:first-child::before { top: 0; }
+  .project-row:last-child::before { bottom: 0; }
   .card:hover, .card:focus-visible,
   .card.reveal.is-visible:hover, .card.reveal.is-visible:focus-visible { transform: scale(1.04) translateY(-4px); }
 }
@@ -476,6 +525,9 @@ p.entry__place { text-decoration: none; }
   .device::before { width: 96px; height: 28px; clip-path: polygon(0 0, 100% 0, 100% 100%, 26px 100%); }
   .device__plate { font-size: 1rem; }
   .device__led { top: 38px; right: 14px; width: 12px; height: 12px; }
+  .shoulder { width: 58px; height: 54px; font-size: 1.5rem; }
+  .footer__controls { gap: 14px; }
+  .footer__pill { width: 110px; height: 36px; }
   .screen { padding: 26px 14px 22px; border-radius: 22px; }
   .hero__title { font-size: 1rem; padding: 4px 16px 5px; letter-spacing: .05em; }
   .screen:has(.screen__tab) { padding-top: 66px; }

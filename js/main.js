@@ -94,7 +94,13 @@
     document.getElementById("projects-sub").textContent = t(UI_TEXT.projectsCount).replace("{n}", PROJECTS.length);
     const list = document.getElementById("project-list");
     list.replaceChildren();
-    PROJECTS.forEach((p) => {
+    // Kartlar ikişerli satırlara dizilir; satırdaki iki kartı siyah bir çizgi bağlar
+    let row = null;
+    PROJECTS.forEach((p, i) => {
+      if (i % 2 === 0) {
+        row = el("div", "project-row");
+        list.append(row);
+      }
       const card = el("a", "card reveal");
       card.href = p.url;
       card.target = "_blank";
@@ -123,7 +129,7 @@
       info.append(el("p", "card__desc", t(p.desc)));
 
       card.append(logo, info);
-      list.append(card);
+      row.append(card);
     });
   }
 
