@@ -57,7 +57,7 @@ Yol boş bırakılırsa buton pasif görünür ve "Yakında" yazar.
 
 ## Önbellek (sürüm numarası)
 
-`index.html`'in sonunda dosyalar `js/data.js?v=5` gibi bir sürüm numarasıyla yüklenir. `js/` veya `css/` içindeki bir dosyayı değiştirdiğinizde bu sayıyı (üç yerde) bir artırın; böylece ziyaretçilerin tarayıcısı önbellekteki eski dosyayı kullanmaz.
+`index.html`'in sonunda dosyalar `js/data.js?v=6` gibi bir sürüm numarasıyla yüklenir. `js/` veya `css/` içindeki bir dosyayı değiştirdiğinizde bu sayıyı (üç yerde) bir artırın; böylece ziyaretçilerin tarayıcısı önbellekteki eski dosyayı kullanmaz.
 
 ## Yerelde önizleme
 

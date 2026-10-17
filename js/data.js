@@ -6,7 +6,8 @@
 
 const SITE = {
   name: "Oktay Ürekli",
-  title: { tr: "Junior Oyun Geliştirici · Unity", en: "Junior Game Developer · Unity" },
+  // Unvan büyük harfle yazılır (Türkçe İ/I karışmasın diye CSS dönüştürmez).
+  title: { tr: "JUNIOR OYUN GELİŞTİRİCİ · UNITY", en: "JUNIOR GAME DEVELOPER · UNITY" },
   email: "oktay.u.bm@gmail.com",
 
   links: {

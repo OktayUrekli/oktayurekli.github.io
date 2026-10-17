@@ -190,7 +190,6 @@ a { color: inherit; }
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: .08em;
-  text-transform: uppercase;
   color: var(--lcd-light);
   background: var(--ink);
   border-radius: 999px;
