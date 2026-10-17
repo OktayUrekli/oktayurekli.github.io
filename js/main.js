@@ -86,11 +86,6 @@
     });
   }
 
-  function renderSkills() {
-    const list = document.getElementById("skill-list");
-    list.replaceChildren(...SKILLS.map((s) => el("li", "skill", t(s))));
-  }
-
   function initials(name) {
     return name.split(/[\s:]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   }
@@ -153,7 +148,6 @@
     renderHero();
     renderTimeline("experience-list", EXPERIENCE);
     renderTimeline("education-list", EDUCATION);
-    renderSkills();
     renderProjects();
     // Dil değişiminde yeniden çizilen kartlar tekrar animasyonla belirmesin
     if (!firstRender) document.querySelectorAll(".reveal").forEach((n) => n.classList.add("is-visible"));

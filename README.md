@@ -9,7 +9,7 @@ Oktay Ürekli'nin oyun geliştirici portfolyosu. Sade HTML + CSS + JavaScript il
 ```
 index.html          Sayfa iskeleti
 css/style.css       Tasarım (renkler en üstte :root içinde)
-js/data.js          TÜM İÇERİK: isim, linkler, CV, deneyim, eğitim, yetenekler, projeler, metinler
+js/data.js          TÜM İÇERİK: isim, linkler, CV, deneyim, eğitim, projeler, metinler
 js/main.js          Sayfayı data.js'ten oluşturan kod (genelde dokunmanız gerekmez)
 assets/logos/       Oyun logoları
 assets/cv/          CV dosyaları
@@ -42,9 +42,6 @@ Hepsi `js/data.js` içinde yapılır. Her metnin `tr` ve `en` karşılığı var
 
 ### Açıklaması "Yakında" olan bir oyunu güncellemek
 İlgili oyunun `desc: SOON` satırını yukarıdaki gibi `{ tr: "...", en: "..." }` ile değiştirin; isterseniz `genre` da ekleyin.
-
-### Yetenek eklemek
-`SKILLS` listesine `"Yetenek"` (iki dilde aynıysa) veya `{ tr: "...", en: "..." }` ekleyin.
 
 ### CV butonunu açmak
 1. PDF'leri `assets/cv/` klasörüne koyun (ör. `Oktay_Urekli_CV_TR.pdf`, `Oktay_Urekli_CV_EN.pdf`).

@@ -48,16 +48,6 @@ const EDUCATION = [
   },
 ];
 
-// Yetenekler — eğitim kutusunun altında etiketler halinde görünür.
-const SKILLS = [
-  "Unity", "C#", "OOP", "SOLID",
-  { tr: "Oyun Mekanikleri", en: "Gameplay Mechanics" },
-  { tr: "UI Geliştirme", en: "UI Development" },
-  { tr: "Performans Optimizasyonu", en: "Performance Optimization" },
-  "Game Feel",
-  "Git / GitHub", "Trello", "Notion",
-];
-
 // ---------------------------------------------------------------------
 //  PROJELER — sitede bu sırayla (yukarıdan aşağı) görünür.
 //  Yeni oyun eklemek için listenin başına yeni bir blok ekleyin.
@@ -214,7 +204,6 @@ const UI_TEXT = {
   cvSoon: { tr: "CV · Yakında", en: "CV · Soon" },
   experience: { tr: "Deneyim", en: "Experience" },
   education: { tr: "Eğitim", en: "Education" },
-  skills: { tr: "Yetenekler", en: "Skills" },
   projects: { tr: "Projeler", en: "Projects" },
   projectsCount: { tr: "{n} oyun · yeniden eskiye", en: "{n} games · newest first" },
   logoSoon: { tr: "logo yakında", en: "logo soon" },

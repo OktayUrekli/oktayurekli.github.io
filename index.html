@@ -6,7 +6,7 @@
   <title>Oktay Ürekli · Unity Game Developer</title>
   <meta name="description" content="Oktay Ürekli — Junior Unity game developer. Portfolio of multiplayer arcade, board and action games built with Unity and C#.">
   <meta name="author" content="Oktay Ürekli">
-  <meta name="theme-color" content="#4f8a62">
+  <meta name="theme-color" content="#5fbf45">
   <link rel="canonical" href="https://oktayurekli.github.io/">
   <meta property="og:title" content="Oktay Ürekli · Unity Game Developer">
   <meta property="og:description" content="Junior Unity game developer — portfolio of 12 games built with Unity and C#.">
@@ -47,7 +47,7 @@
     <symbol id="i-cv" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></symbol>
   </svg>
 
-  <div class="sky" aria-hidden="true"><span class="cloud cloud--1"></span><span class="cloud cloud--2"></span><span class="cloud cloud--3"></span></div>
+  <div class="sky" aria-hidden="true"><span class="spark spark--1"></span><span class="spark spark--2"></span><span class="spark spark--3"></span><span class="spark spark--4"></span><span class="spark spark--5"></span><span class="spark spark--6"></span><span class="spark spark--7"></span><span class="spark spark--8"></span><span class="spark spark--9"></span><span class="spark spark--10"></span><span class="spark spark--11"></span><span class="spark spark--12"></span></div>
 
   <!-- Dil seçimi (sağ üstte sabit) -->
   <div class="lang" role="group" aria-label="Language">
@@ -58,18 +58,17 @@
   <main id="top">
     <!-- Giriş -->
     <section class="hero">
-      <div class="window window--hero reveal">
-        <div class="window__bar">
+      <div class="hud reveal">
+        <div class="hud__avatar" aria-hidden="true">OÜ</div>
+        <div class="hud__main">
           <h1 class="hero__name" id="hero-name" lang="tr"></h1>
-        </div>
-        <div class="window__body hero__body">
           <p class="hero__title" id="hero-title"></p>
           <a class="hero__email" id="hero-email"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span></span></a>
           <div class="hero__actions">
             <a class="icon-btn icon-btn--blue" id="link-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-            <a class="icon-btn icon-btn--yellow" id="link-github" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
-            <a class="icon-btn icon-btn--pink" id="link-itch" target="_blank" rel="noopener" aria-label="itch.io"><svg class="ico" aria-hidden="true"><use href="#i-itch"/></svg></a>
-            <a class="btn btn--green" id="cv-btn"><svg class="ico" aria-hidden="true"><use href="#i-cv"/></svg><span></span></a>
+            <a class="icon-btn icon-btn--navy" id="link-github" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
+            <a class="icon-btn icon-btn--red" id="link-itch" target="_blank" rel="noopener" aria-label="itch.io"><svg class="ico" aria-hidden="true"><use href="#i-itch"/></svg></a>
+            <a class="btn" id="cv-btn"><svg class="ico" aria-hidden="true"><use href="#i-cv"/></svg><span></span></a>
           </div>
         </div>
       </div>
@@ -80,24 +79,16 @@
       <h2 class="section__title" data-i18n="navExperience"></h2>
       <div class="cv-grid">
         <div class="window reveal">
-          <div class="window__bar window__bar--pink">
+          <div class="window__bar window__bar--green">
             <span class="window__title" data-i18n="experience"></span>
           </div>
           <div class="window__body" id="experience-list"></div>
         </div>
-        <div class="cv-grid__side">
-          <div class="window reveal">
-            <div class="window__bar window__bar--yellow">
-              <span class="window__title" data-i18n="education"></span>
-            </div>
-            <div class="window__body" id="education-list"></div>
+        <div class="window reveal">
+          <div class="window__bar window__bar--red">
+            <span class="window__title" data-i18n="education"></span>
           </div>
-          <div class="window reveal">
-            <div class="window__bar window__bar--green">
-              <span class="window__title" data-i18n="skills"></span>
-            </div>
-            <div class="window__body"><ul class="skills" id="skill-list"></ul></div>
-          </div>
+          <div class="window__body" id="education-list"></div>
         </div>
       </div>
     </section>
@@ -111,7 +102,6 @@
   </main>
 
   <footer class="footer">
-    <svg class="footer__hill" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V64C140 18 290 4 450 30c150 24 230 70 390 64 170-6 260-80 420-82 70 0 130 14 180 30v108z"/></svg>
     <p>© <span id="year"></span> Oktay Ürekli</p>
   </footer>
 
