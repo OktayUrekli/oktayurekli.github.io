@@ -53,10 +53,8 @@ const EDUCATION = [
 //  Yeni oyun eklemek için listenin başına yeni bir blok ekleyin.
 //  logo : assets/logos/ içindeki dosya. Boş bırakılırsa geçici görsel çıkar.
 //  genre: tür ve platform; istemezseniz null yazın.
-//  org  : kartın altındaki etiket (şirket adı veya proje türü).
 // ---------------------------------------------------------------------
 const BAMBU = "https://bambugames.com.tr/";
-const BAMBU_ORG = "Bambu Games";
 const SOON = { tr: "Yakında açıklama eklenecek.", en: "Description coming soon." };
 
 const PROJECTS = [
@@ -69,7 +67,6 @@ const PROJECTS = [
       en: "Reflex- and timing-based arcade game for 1–6 players.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Block Rain",
@@ -80,7 +77,6 @@ const PROJECTS = [
       en: "Tetris-inspired arcade block game for 1–6 players.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Basket Go",
@@ -91,7 +87,6 @@ const PROJECTS = [
       en: "Dunk Hit-inspired local arcade basketball for 1–6 players.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Dots And Boxes",
@@ -102,7 +97,6 @@ const PROJECTS = [
       en: "A digital adaptation of the classic Dots and Boxes.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "What Am I?",
@@ -113,7 +107,6 @@ const PROJECTS = [
       en: "A digital game-table take on \"Who Am I?\" with ghost-screen 1v1 and 2v2 modes.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Carrom Bambu",
@@ -124,7 +117,6 @@ const PROJECTS = [
       en: "Official-rules Carrom with physics-based aiming and shooting, in 1v1 / 2v2.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Tombala Bambu",
@@ -135,7 +127,6 @@ const PROJECTS = [
       en: "A 2–6 player digital adaptation of traditional Tombala.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Wing Party",
@@ -146,7 +137,6 @@ const PROJECTS = [
       en: "Team-based Flappy Bird-style game for 2–6 players with power-ups and dynamic difficulty.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Pin Pin",
@@ -157,7 +147,6 @@ const PROJECTS = [
       en: "Reflex- and timing-based arcade team game for 2–6 players.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "8 Ball Pool",
@@ -168,7 +157,6 @@ const PROJECTS = [
       en: "Billiards simulation with realistic ball collisions and table physics.",
     },
     url: BAMBU,
-    org: BAMBU_ORG,
   },
   {
     name: "Soul Land: Escaping Adventure",
@@ -179,7 +167,6 @@ const PROJECTS = [
       en: "Isometric action game with 10 levels, 14 NPCs, and melee and ranged combat.",
     },
     url: "https://oktay-urekli.itch.io/slea",
-    org: { tr: "Bitirme Projesi", en: "Graduation Project" },
   },
   {
     name: "Anomaly Rocket",
@@ -190,7 +177,6 @@ const PROJECTS = [
       en: "Level-based platformer with 7 unique rockets and 10 levels.",
     },
     url: "https://oktay-urekli.itch.io/anomaly-rocket",
-    org: { tr: "Üniversite Projesi", en: "University Project" },
   },
 ];
 

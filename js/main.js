@@ -123,8 +123,6 @@
       info.append(el("p", "card__desc", t(p.desc)));
 
       card.append(logo, info);
-      // Sağ üst köşedeki turuncu etiket: "Bambu Games", "Bitirme Projesi" vb.
-      if (p.org) card.append(el("span", "card__badge", t(p.org)));
       list.append(card);
     });
   }
