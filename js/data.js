@@ -55,7 +55,7 @@ const SOON = { tr: "Yakında açıklama eklenecek.", en: "Description coming soo
 const PROJECTS = [
   {
     name: "Tap Target",
-    logo: "",
+    logo: "assets/logos/tap-target.webp",
     genre: null,
     desc: SOON,
     url: BAMBU,
@@ -79,7 +79,7 @@ const PROJECTS = [
   },
   {
     name: "Dots And Boxes",
-    logo: "",
+    logo: "assets/logos/dots-and-boxes.webp",
     genre: null,
     desc: SOON,
     url: BAMBU,
@@ -103,7 +103,7 @@ const PROJECTS = [
   },
   {
     name: "Tombala Bambu",
-    logo: "",
+    logo: "assets/logos/tombala-bambu.webp",
     genre: { tr: "2D Klasik Masa Oyunu – PC", en: "2D Classic Board Game – PC" },
     desc: {
       tr: "Geleneksel Tombala'nın 2–6 oyunculu dijital uyarlaması.",
@@ -123,7 +123,7 @@ const PROJECTS = [
   },
   {
     name: "Pin Pin",
-    logo: "",
+    logo: "assets/logos/pin-pin.webp",
     genre: null,
     desc: SOON,
     url: BAMBU,
@@ -140,7 +140,7 @@ const PROJECTS = [
   },
   {
     name: "Soul Land: Escaping Adventure",
-    logo: "",
+    logo: "assets/logos/slea.webp",
     genre: { tr: "3D Dungeon Crawler – PC / Web", en: "3D Dungeon Crawler – PC / Web" },
     desc: {
       tr: "10 bölüm ve 14 NPC'li, yakın ve menzilli dövüşlü izometrik aksiyon oyunu.",
