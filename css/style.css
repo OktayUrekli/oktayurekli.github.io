@@ -86,42 +86,54 @@ a { color: inherit; }
 .lang__btn:not(.is-active):hover { background: var(--hover); }
 
 /* =====================================================================
-   Giriş — büyük başlık + kurallar kutusu gibi panel
+   Giriş — pencere: başlık çubuğu, araç çubuğu, ekran
    ===================================================================== */
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  align-items: end;
-  gap: 32px 48px;
-  padding-bottom: 32px;
+  background: var(--white);
+  border: var(--line-xl) solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+}
+.hero__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 6px 12px 6px 18px;
+  background: var(--teal);
   border-bottom: var(--line-xl) solid var(--ink);
+}
+.hero__file { font: 800 1.15rem/1 var(--font); letter-spacing: .02em; }
+.hero__toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 18px 20px 0; }
+.hero__toolbar .addressbar { flex: 1 1 auto; min-width: 0; }
+.hero__toolbar .btn { flex: 0 0 auto; }
+.hero__screen {
+  margin: 18px 20px 22px;
+  padding: 56px 24px 60px;
+  text-align: center;
+  background: var(--paper);
+  border: var(--line) solid var(--ink);
+  box-shadow: var(--shadow);
 }
 .hero__name {
   margin: 0;
-  font: 900 clamp(3rem, 8.5vw, 6.4rem)/.9 var(--font);
+  font: 900 clamp(2.6rem, 8vw, 5.6rem)/.9 var(--font);
   font-stretch: 75%;
   letter-spacing: -.01em;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 .hero__title {
   display: inline-block;
-  margin: 18px 0 0;
-  padding: 6px 14px;
+  margin: 22px 0 0;
+  padding: 8px 18px;
   font: 800 clamp(1.05rem, 2.2vw, 1.35rem)/1.2 var(--font);
   font-stretch: 85%;
   background: var(--yellow);
   border: var(--line) solid var(--ink);
   box-shadow: var(--shadow-sm);
+  text-wrap: balance;
 }
-.hero__panel {
-  display: grid;
-  gap: 16px;
-  padding: 20px;
-  background: var(--white);
-  border: var(--line) solid var(--ink);
-  box-shadow: var(--shadow);
-}
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* e-posta: giriş kutusu gibi */
 .addressbar {
@@ -397,8 +409,9 @@ p.entry__place { text-decoration: none; }
 @media (min-width: 861px) {   /* kart büyüyünce gölgesi bölüm dışına taşmasın diye pay */
   .projects { padding: 0 12px 12px 0; }
 }
-@media (max-width: 960px) {
-  .hero { grid-template-columns: 1fr; align-items: start; }
+@media (max-width: 820px) {   /* e-posta kendi satırına geçer */
+  .hero__toolbar .addressbar { flex-basis: 100%; order: -1; }
+  .hero__toolbar .btn { flex: 1 1 auto; }
 }
 @media (max-width: 860px) {
   .cv-grid { grid-template-columns: 1fr; }
@@ -412,9 +425,12 @@ p.entry__place { text-decoration: none; }
   .page { gap: 48px; padding: 76px 16px 0 14px; }
   .lang { top: 12px; right: 12px; }
   .lang__btn { height: 38px; min-width: 46px; }
-  .hero__panel { padding: 14px; }
+  .hero { box-shadow: 6px 6px 0 var(--ink); }
+  .hero__bar { min-height: 46px; padding: 6px 10px 6px 14px; }
+  .hero__toolbar { padding: 14px 14px 0; gap: 10px; }
+  .hero__screen { margin: 14px 14px 16px; padding: 36px 14px 40px; }
   .icon-btn { width: auto; flex: 1 1 0; min-height: 48px; }
-  .btn { flex-basis: 100%; min-height: 48px; }
+  .hero__toolbar .btn { flex-basis: 100%; min-height: 48px; }
   .addressbar { font-size: 1.05rem; padding-left: 12px; }
   .addressbar__cap { width: 46px; }
   .window__bar { margin-bottom: 26px; }

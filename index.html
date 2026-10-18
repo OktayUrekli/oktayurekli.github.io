@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=12">
   <!-- Belirme animasyonu ilk boyamadan itibaren devrede olsun (çift giriş efekti olmasın) -->
   <script>document.documentElement.classList.add("reveal-on")</script>
 </head>
@@ -58,20 +58,22 @@
   </div>
 
   <main class="page" id="top">
-    <!-- Giriş -->
+    <!-- Giriş penceresi -->
     <section class="hero reveal" aria-labelledby="hero-name">
-      <div class="hero__main">
+      <div class="hero__bar">
+        <span class="hero__file" lang="en" aria-hidden="true">portfolio.exe</span>
+        <span class="window__ctrls" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div class="hero__toolbar">
+        <a class="icon-btn icon-btn--yellow" id="link-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        <a class="icon-btn icon-btn--teal" id="link-github" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a class="icon-btn icon-btn--magenta" id="link-itch" target="_blank" rel="noopener" aria-label="itch.io"><svg class="ico" aria-hidden="true"><use href="#i-itch"/></svg></a>
+        <a class="addressbar" id="hero-email"><span class="addressbar__text"></span><span class="caret" aria-hidden="true"></span><span class="addressbar__cap" aria-hidden="true"><svg class="ico"><use href="#i-mail"/></svg></span></a>
+        <a class="btn" id="cv-btn" role="link"><svg class="ico ico--on" aria-hidden="true"><use href="#i-cv"/></svg><svg class="ico ico--off" aria-hidden="true"><use href="#i-lock"/></svg><span></span></a>
+      </div>
+      <div class="hero__screen">
         <h1 class="hero__name" id="hero-name" lang="tr"></h1>
         <p class="hero__title" id="hero-title"></p>
-      </div>
-      <div class="hero__panel">
-        <a class="addressbar" id="hero-email"><span class="addressbar__text"></span><span class="caret" aria-hidden="true"></span><span class="addressbar__cap" aria-hidden="true"><svg class="ico"><use href="#i-mail"/></svg></span></a>
-        <div class="hero__actions">
-          <a class="icon-btn icon-btn--yellow" id="link-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-          <a class="icon-btn icon-btn--teal" id="link-github" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
-          <a class="icon-btn icon-btn--magenta" id="link-itch" target="_blank" rel="noopener" aria-label="itch.io"><svg class="ico" aria-hidden="true"><use href="#i-itch"/></svg></a>
-          <a class="btn" id="cv-btn" role="link"><svg class="ico ico--on" aria-hidden="true"><use href="#i-cv"/></svg><svg class="ico ico--off" aria-hidden="true"><use href="#i-lock"/></svg><span></span></a>
-        </div>
       </div>
     </section>
 
@@ -104,8 +106,8 @@
   </footer>
 
   <!-- ?v=… : dosyaları değiştirdiğinizde bu sayıyı artırın, tarayıcılar eski sürümü önbellekten kullanmasın -->
-  <script src="js/data.js?v=11"></script>
-  <script src="js/main.js?v=11"></script>
+  <script src="js/data.js?v=12"></script>
+  <script src="js/main.js?v=12"></script>
   <!-- Güvenlik ağı: betikler yüklenemez ya da hata verirse içerik gizli kalmasın -->
   <script>window.__rendered || document.documentElement.classList.remove("reveal-on")</script>
 </body>
