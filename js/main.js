@@ -106,7 +106,6 @@
   }
 
   function renderProjects() {
-    document.getElementById("projects-sub").textContent = t(UI_TEXT.projectsCount).replace("{n}", PROJECTS.length);
     const list = document.getElementById("project-list");
     list.replaceChildren();
     // Kartlar ikişerli satırlara dizilir (masaüstünde 2 sütun)

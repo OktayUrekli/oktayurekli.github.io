@@ -193,6 +193,5 @@ const UI_TEXT = {
   experience: { tr: "Deneyim", en: "Experience" },
   education: { tr: "Eğitim", en: "Education" },
   projects: { tr: "Projeler", en: "Projects" },
-  projectsCount: { tr: "{n} oyun · en yeniden eskiye", en: "{n} games · newest first" },
   logoSoon: { tr: "logo yakında", en: "logo soon" },
 };
