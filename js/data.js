@@ -17,11 +17,10 @@ const SITE = {
     itch: "https://oktay-urekli.itch.io/",
   },
 
-  // CV dosyaları hazır olunca assets/cv/ klasörüne koyup yolları yazın.
   // Boş ("") bırakılırsa buton pasif görünür ve "Yakında" yazar.
   cv: {
-    tr: "",
-    en: "",
+    tr: "assets/cv/Oktay_Urekli_CV_TR.pdf",
+    en: "assets/cv/Oktay_Urekli_CV_EN.pdf",
   },
 };
 
