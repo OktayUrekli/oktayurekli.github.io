@@ -1,76 +1,48 @@
-# oktayurekli.github.io
+# Oktay Ürekli — Portfolyo
 
-🌐 **Canlı site: [https://oktayurekli.github.io](https://oktayurekli.github.io)**
+Unity oyun geliştiricisi olarak kişisel portfolyo sitem. Profesyonel olarak ve üniversite döneminde geliştirdiğim oyunları, deneyimimi ve eğitimimi bir arada sunuyor.
 
-Oktay Ürekli'nin oyun geliştirici portfolyosu. Sade HTML + CSS + JavaScript ile yazılmıştır; derleme adımı yoktur. Değişiklikleri commit edip push etmeniz yeterlidir, GitHub Pages siteyi 1–2 dakika içinde günceller.
+**Site:** [oktayurekli.github.io](https://oktayurekli.github.io)
 
-## Dosya yapısı
+## Hakkında
+
+- Türkçe ve İngilizce dil desteği
+- Masaüstü ve mobil uyumlu tasarım
+- El çizimi retro arayüz temalı görsel stil ve hafif animasyonlar
+- Erişilebilirlik için "hareketi azalt" tercihine uyum
+
+## Teknolojiler
+
+Site herhangi bir framework veya derleme adımı olmadan, sade **HTML**, **CSS** ve **JavaScript** ile geliştirildi ve **GitHub Pages** üzerinde yayınlanıyor.
 
 ```
-index.html          Sayfa iskeleti
-css/style.css       Tasarım (renkler en üstte :root içinde)
-js/data.js          TÜM İÇERİK: isim, linkler, CV, deneyim, eğitim, projeler, metinler
-js/main.js          Sayfayı data.js'ten oluşturan kod (genelde dokunmanız gerekmez)
-assets/logos/       Oyun logoları
-assets/cv/          CV dosyaları
-assets/favicon.svg  Tarayıcı sekmesindeki ikon
+index.html          Sayfa yapısı
+css/style.css       Görsel tasarım ve animasyonlar
+js/data.js          Tüm içerik (deneyim, eğitim, projeler, TR/EN metinler)
+js/main.js          İçeriği sayfaya yerleştiren kod
+assets/             Oyun logoları, CV dosyaları ve site ikonu
 ```
 
-## Sık yapılan güncellemeler
+İçerik tek bir dosyada (`js/data.js`) toplandığı için yeni bir proje eklemek ya da metinleri güncellemek kodun geri kalanına dokunmadan yapılabiliyor. Stil ve betik dosyaları `?v=` sürüm numarasıyla yükleniyor; dosyalarda değişiklik yaptığımda bu numarayı artırarak ziyaretçilerin güncel sürümü görmesini sağlıyorum.
 
-Hepsi `js/data.js` içinde yapılır. Her metnin `tr` ve `en` karşılığı vardır.
-
-### Yeni oyun eklemek
-1. Logoyu `assets/logos/` klasörüne koyun (kare, ~360×360 px, `.webp` veya `.png`).
-2. `PROJECTS` listesinin **en başına** (en yeni oyun en üstte görünür) şu bloğu ekleyin:
-
-```js
-  {
-    name: "Oyun Adı",
-    logo: "assets/logos/oyun-adi.webp",
-    genre: { tr: "2D Casual – PC", en: "2D Casual – PC" },   // istemezseniz: null
-    desc: {
-      tr: "Tek cümlelik Türkçe açıklama.",
-      en: "One-sentence English description.",
-    },
-    url: "https://oyunun-linki",
-  },
-```
-
-> Dikkat: `{ tr: "...", en: "..." }` kalıbındaki süslü parantezleri ve satır sonundaki virgülleri silmeyin; biri eksik olursa sayfa boş görünür.
-
-### Açıklaması "Yakında" olan bir oyunu güncellemek
-İlgili oyunun `desc: SOON` satırını yukarıdaki gibi `{ tr: "...", en: "..." }` ile değiştirin; isterseniz `genre` da ekleyin.
-
-### CV butonunu açmak
-1. PDF'leri `assets/cv/` klasörüne koyun (ör. `Oktay_Urekli_CV_TR.pdf`, `Oktay_Urekli_CV_EN.pdf`).
-2. `SITE.cv` içindeki yolları doldurun:
-
-```js
-  cv: {
-    tr: "assets/cv/Oktay_Urekli_CV_TR.pdf",
-    en: "assets/cv/Oktay_Urekli_CV_EN.pdf",
-  },
-```
-
-Yol boş bırakılırsa buton pasif görünür ve "Yakında" yazar.
-
-## Önbellek (sürüm numarası)
-
-`index.html`'in sonunda dosyalar `js/data.js?v=10` gibi bir sürüm numarasıyla yüklenir. `js/` veya `css/` içindeki bir dosyayı değiştirdiğinizde bu sayıyı (üç yerde) bir artırın; böylece ziyaretçilerin tarayıcısı önbellekteki eski dosyayı kullanmaz.
-
-## Büyük/küçük harf
-
-CSS metinleri büyük harfe çevirmez; büyük/küçük harf `data.js`'te nasıl yazıldıysa sitede de öyle görünür.
-
-## Yerelde önizleme
-
-Klasörde bir terminal açıp şunu çalıştırın, ardından tarayıcıda `http://localhost:8000` adresini açın:
+## Yerelde Çalıştırma
 
 ```
 python3 -m http.server 8000
 ```
 
-## Lisanslar
+Ardından tarayıcıda `http://localhost:8000` adresi açılır.
 
-İkonlar: [Font Awesome Free 6.5.2](https://fontawesome.com/license/free) (CC BY 4.0). Fontlar: Shantell Sans ve Nunito (Google Fonts, SIL OFL).
+## İletişim
+
+- E-posta: [oktay.u.bm@gmail.com](mailto:oktay.u.bm@gmail.com)
+- LinkedIn: [linkedin.com/in/oktay-urekli](https://www.linkedin.com/in/oktay-urekli)
+- itch.io: [oktay-urekli.itch.io](https://oktay-urekli.itch.io/)
+
+## Lisans
+
+© Oktay Ürekli. Tüm hakları saklıdır.
+
+Kod, tasarım, metinler ve oyun logoları izinsiz kullanılamaz; oyun logolarının hakları ilgili sahiplerine aittir.
+
+Sitede kullanılan üçüncü taraf kaynaklar kendi lisanslarına tabidir: ikonlar [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0), yazı tipleri Shantell Sans ve Nunito (Google Fonts, SIL OFL).
