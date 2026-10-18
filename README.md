@@ -8,7 +8,7 @@ Unity oyun geliştiricisi olarak kişisel portfolyo sitem. Profesyonel olarak ve
 
 - Türkçe ve İngilizce dil desteği
 - Masaüstü ve mobil uyumlu tasarım
-- El çizimi retro arayüz temalı görsel stil ve hafif animasyonlar
+- Neo-brütalist görsel stil ve hafif animasyonlar
 - Erişilebilirlik için "hareketi azalt" tercihine uyum
 
 ## Teknolojiler
@@ -45,4 +45,4 @@ Ardından tarayıcıda `http://localhost:8000` adresi açılır.
 
 Kod, tasarım, metinler ve oyun logoları izinsiz kullanılamaz; oyun logolarının hakları ilgili sahiplerine aittir.
 
-Sitede kullanılan üçüncü taraf kaynaklar kendi lisanslarına tabidir: ikonlar [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0), yazı tipleri Shantell Sans ve Nunito (Google Fonts, SIL OFL).
+Sitede kullanılan üçüncü taraf kaynaklar kendi lisanslarına tabidir: ikonlar [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0), yazı tipi Archivo (Google Fonts, SIL OFL).
